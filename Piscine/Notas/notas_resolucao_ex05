@@ -1,0 +1,67 @@
+exercicio5
+
+
+/home/josaraiv/lisboa
+c1r7s10% mkdir ex05
+c1r7s10% cd ex05
+c1r7s10% pwd
+/home/josaraiv/lisboa/ex05
+c1r7s10% man git log
+c1r7s10% 
+c1r7s10% pwd
+/home/josaraiv/lisboa/ex05
+c1r7s10% touch git_commit.sh
+c1r7s10% pwd
+/home/josaraiv/lisboa/ex05
+c1r7s10% nano git_commit.sh 
+c1r7s10% git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	../ex00/
+	../ex01/
+	../ex02/
+	../ex03/
+	../ex04/
+	./
+
+nothing added to commit but untracked files present (use "git add" to track)
+c1r7s10% nano git_commit.sh 
+c1r7s10% ./git_commit.sh 
+zsh: permission denied: ./git_commit.sh
+c1r7s10% chmod +x git_commit.sh 
+c1r7s10% ./git_commit.sh       
+54d00ba19056dbd85645b6f09b09373bd46f8853
+c1r7s10% git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	../ex00/
+	../ex01/
+	../ex02/
+	../ex03/
+	../ex04/
+	./
+
+nothing added to commit but untracked files present (use "git add" to track)
+c1r7s10% cat git_commit.sh 
+#!/bin/sh
+git log --format='%H' -n 5
+
+c1r7s10% bash git_commit.sh | cat -e
+54d00ba19056dbd85645b6f09b09373bd46f8853$
+c1r7s10% 
+
+
+
+link
+https://stackoverflow.com/questions/56840491/create-a-shell-script-that-returns-the-last-5-hash-of-my-commits-of-my-git-depos
+
+
+#!/bin/sh
+git log --format='%H' -n 5
+

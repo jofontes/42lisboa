@@ -1,0 +1,19 @@
+c1r7s10% id
+uid=101586(josaraiv) gid=4224(2024_lisboa) groups=4224(2024_lisboa),204(_developer)
+c1r7s10% id -G
+4224 204
+c1r7s10% id -Gn
+2024_lisboa _developer
+c1r7s10% man id
+c1r7s10% id -G -n
+2024_lisboa _developer
+c1r7s10% touch print_groups.sh
+c1r7s10% vin print_groups.sh 
+zsh: command not found: vin
+c1r7s10% nano print_groups.sh 
+c1r7s10% vim print_groups.sh 
+c1r7s10% vim print_groups.sh 
+c1r7s10% ./print_groups.sh 
+zsh: permission denied: ./print_groups.sh
+c1r7s10% man chmod
+c1r7s10%      

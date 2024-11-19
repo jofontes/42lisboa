@@ -1,0 +1,28 @@
+exercicio 4
+
+
+c1r7s10% mkdir ex04
+c1r7s10% ls
+1st_step  ex00	ex01  ex02  ex03  ex04
+c1r7s10% ls -l
+total 0
+drwxr-xr-x 2 josaraiv 2024_lisboa  31 set 16 14:20 1st_step
+drwxr-xr-x 2 josaraiv 2024_lisboa  15 set 16 15:59 ex00
+drwxr-xr-x 2 josaraiv 2024_lisboa  48 set 16 16:43 ex01
+drwxr-xr-x 4 josaraiv 2024_lisboa 113 set 17 13:18 ex02
+drwxr-xr-x 2 josaraiv 2024_lisboa  46 set 17 13:58 ex03
+drwxr-xr-x 2 josaraiv 2024_lisboa   6 set 17 14:54 ex04
+c1r7s10% man ls
+c1r7s10% man ls
+c1r7s10% ls -mpt
+ex04/, ex03/, ex02/, ex01/, ex00/, 1st_step/
+c1r7s10% pwd
+/home/josaraiv/lisboa
+c1r7s10% cd ex04
+c1r7s10% pwd
+/home/josaraiv/lisboa/ex04
+c1r7s10% touch midLS
+c1r7s10% echo "ls -mpt" > midLS 
+c1r7s10% cat midLS 
+ls -mpt
+

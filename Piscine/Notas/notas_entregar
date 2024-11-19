@@ -1,0 +1,126 @@
+c1r7s10% git clone git@vogsphere.42lisboa.com:vogsphere/intra-uuid-c23af7e9-459a-4dad-a80a-126dfb87b212-6050618-josaraiv Shell00
+
+
+
+git clone git@vogsphere.42lisboa.com:vogsphere/intra-uuid-c23af7e9-459a-4dad-a80a-126dfb87b212-6050618-josaraiv Shell00
+Cloning into 'Shell00'...
+warning: You appear to have cloned an empty repository.
+c1r7s10% ls
+Desktop    ex03      Music		   Public     try3
+Documents  ex1test1  notas		   Shell00    try4
+Downloads  exo2.tar  notas_resolucao_ex02  snap       try5.txt
+ex00	   goinfre   notas_resolucao_ex04  Templates  Videos
+ex01	   hello.sh  notas_resolucao_ex05  try1.sh
+ex02	   lisboa    Pictures		   try2.txt
+c1r7s10% ls   
+Desktop    ex03      Music		   Public     try3
+Documents  ex1test1  notas		   Shell00    try4
+Downloads  exo2.tar  notas_resolucao_ex02  snap       try5.txt
+ex00	   goinfre   notas_resolucao_ex04  Templates  Videos
+ex01	   hello.sh  notas_resolucao_ex05  try1.sh
+ex02	   lisboa    Pictures		   try2.txt
+c1r7s10% cd Shell00
+c1r7s10% ls
+c1r7s10% git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+c1r7s10% ls
+ex00  ex01  ex02  ex03	ex04  ex05
+c1r7s10% git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	ex00/
+	ex01/
+	ex02/
+	ex03/
+	ex04/
+	ex05/
+
+nothing added to commit but untracked files present (use "git add" to track)
+c1r7s10% git add ex00
+c1r7s10% git add ex01
+c1r7s10% git add ex02
+c1r7s10% git add ex03
+c1r7s10% git add ex04
+c1r7s10% git add ex05
+c1r7s10% git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   ex00/z
+	new file:   ex01/testShell00
+	new file:   ex01/testShell00.tar
+	new file:   ex02/exo2.tar
+	new file:   ex02/test1
+	new file:   ex02/test3
+	new file:   ex02/test4
+	new file:   ex02/test5
+	new file:   ex02/test6
+	new file:   ex03/id_rsa_pub
+	new file:   ex03/id_rsa_pub.pub
+	new file:   ex04/midLS
+	new file:   ex05/git_commit.sh
+
+c1r7s10% git commit -m "added ex00"
+[master (root-commit) 1652590] added ex00
+ Committer: Joao Saraiva Fontes <josaraiv@c1r7s10.42lisboa.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 13 files changed, 45 insertions(+)
+ create mode 100644 ex00/z
+ create mode 100644 ex01/testShell00
+ create mode 100644 ex01/testShell00.tar
+ create mode 100644 ex02/exo2.tar
+ create mode 100644 ex02/test1
+ create mode 100644 ex02/test3
+ create mode 100644 ex02/test4
+ create mode 100644 ex02/test5
+ create mode 120000 ex02/test6
+ create mode 100644 ex03/id_rsa_pub
+ create mode 100644 ex03/id_rsa_pub.pub
+ create mode 100644 ex04/midLS
+ create mode 100755 ex05/git_commit.sh
+c1r7s10% git commit -m "added ex01"
+On branch master
+Your branch is based on 'origin/master', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+nothing to commit, working tree clean
+c1r7s10% git status
+On branch master
+Your branch is based on 'origin/master', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+nothing to commit, working tree clean
+c1r7s10% git push
+Enumerating objects: 20, done.
+Counting objects: 100% (20/20), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (20/20), 3.65 KiB | 747.00 KiB/s, done.
+Total 20 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: . Processing 1 references
+remote: Processed 1 references in total
+To vogsphere.42lisboa.com:vogsphere/intra-uuid-c23af7e9-459a-4dad-a80a-126dfb87b212-6050618-josaraiv
+ * [new branch]      master -> master
+

@@ -1,0 +1,44 @@
+exercicio 1
+
+c1r7s10% mkdir ex01
+c1r7s10% cd ex01
+c1r7s10% pwd
+/home/josaraiv/Shell00_2/ex01
+c1r7s10% touch testShell00
+c1r7s10% ls
+testShell00
+c1r7s10% ls -l
+total 0
+-rw-r--r-- 1 josaraiv 2024_lisboa 0 set 18 19:04 testShell00
+c1r7s10% truncate -s 40 testShell00 
+c1r7s10% ls -l                     
+total 0
+-rw-r--r-- 1 josaraiv 2024_lisboa 40 set 18 19:07 testShell00
+c1r7s10% touch 06012342 testShell00 
+c1r7s10% ls -l                     
+total 0
+-rw-r--r-- 1 josaraiv 2024_lisboa  0 set 18 19:07 06012342
+-rw-r--r-- 1 josaraiv 2024_lisboa 40 set 18 19:07 testShell00
+c1r7s10% ls -l                     
+total 0
+-rw-r--r-- 1 josaraiv 2024_lisboa 40 set 18 19:07 testShell00
+c1r7s10% touch -t 06012342 testShell00 
+c1r7s10% ls -l                        
+total 0
+-rw-r--r-- 1 josaraiv 2024_lisboa 40 jun  1 23:42 testShell00
+c1r7s10% man chmod
+c1r7s10% chmod -w +x
+chmod: cannot access '+x': No such file or directory
+c1r7s10% chmod +x testShell00 
+c1r7s10% ls -l               
+total 0
+-rwxr-xr-x 1 josaraiv 2024_lisboa 40 jun  1 23:42 testShell00
+c1r7s10% chmod -w testShell00 
+c1r7s10% ls -l               
+total 0
+-r-xr-xr-x 1 josaraiv 2024_lisboa 40 jun  1 23:42 testShell00
+c1r7s10% chmod 455 testShell00 
+c1r7s10% ls -l                
+total 0
+-r--r-xr-x 1 josaraiv 2024_lisboa 40 jun  1 23:42 testShell00
+

@@ -1,0 +1,73 @@
+/////ex1
+c1r7s10% pwd
+/home/josaraiv
+c1r7s10% cd lisboa 
+c1r7s10% pwd
+/home/josaraiv/lisboa
+c1r7s10% touch ex01
+c1r7s10% mkdir ex01
+c1r7s10% cd ex01 
+c1r7s10% pwd
+/home/josaraiv/lisboa/ex01
+c1r7s10% touch testShell00
+c1r7s10% ls -l
+total 0
+-rw-r--r-- 1 josaraiv 2024_lisboa 0 set 16 16:43 testShell00
+c1r7s10% tar -cf testShell00.tar testShell00 
+c1r7s10% pwd
+
+
+/////ex2
+c1r7s10% touch test0
+c1r7s10% touch test1
+c1r7s10% touch test2
+c1r7s10% touch test3
+c1r7s10% touch test4
+c1r7s10% touch test5
+c1r7s10% touch test6
+c1r7s10% ls -l
+total 0
+-rw-r--r-- 1 josaraiv 2024_lisboa 0 set 16 16:57 test0
+-rw-r--r-- 1 josaraiv 2024_lisboa 0 set 16 16:57 test1
+-rw-r--r-- 1 josaraiv 2024_lisboa 0 set 16 16:57 test2
+-rw-r--r-- 1 josaraiv 2024_lisboa 0 set 16 16:57 test3
+-rw-r--r-- 1 josaraiv 2024_lisboa 0 set 16 16:57 test4
+-rw-r--r-- 1 josaraiv 2024_lisboa 0 set 16 16:57 test5
+-rw-r--r-- 1 josaraiv 2024_lisboa 0 set 16 16:57 test6
+c1r7s10% 
+c1r7s10% del test6
+zsh: command not found: del
+c1r7s10% ls -l    
+total 0
+-rw-r--r-- 1 josaraiv 2024_lisboa 0 set 16 16:57 test0
+-rw-r--r-- 1 josaraiv 2024_lisboa 0 set 16 16:57 test1
+-rw-r--r-- 1 josaraiv 2024_lisboa 0 set 16 16:57 test2
+-rw-r--r-- 1 josaraiv 2024_lisboa 0 set 16 16:57 test3
+-rw-r--r-- 1 josaraiv 2024_lisboa 0 set 16 16:57 test4
+-rw-r--r-- 1 josaraiv 2024_lisboa 0 set 16 16:57 test5
+c1r7s10% ln -s test6
+c1r7s10% ls -l      
+total 0
+-rw-r--r-- 1 josaraiv 2024_lisboa 0 set 16 16:57 test0
+-rw-r--r-- 1 josaraiv 2024_lisboa 0 set 16 16:57 test1
+-rw-r--r-- 1 josaraiv 2024_lisboa 0 set 16 16:57 test2
+-rw-r--r-- 1 josaraiv 2024_lisboa 0 set 16 16:57 test3
+-rw-r--r-- 1 josaraiv 2024_lisboa 0 set 16 16:57 test4
+-rw-r--r-- 1 josaraiv 2024_lisboa 0 set 16 16:57 test5
+lrwxrwxrwx 1 josaraiv 2024_lisboa 5 set 16 17:09 test6 -> test6
+c1r7s10% ls -l      
+total 0
+c1r7s10% ln -s test0 test6
+c1r7s10% ls -l            
+total 0
+-rw-r--r-- 1 josaraiv 2024_lisboa 0 set 16 16:57 test0
+-rw-r--r-- 1 josaraiv 2024_lisboa 0 set 16 16:57 test1
+-rw-r--r-- 1 josaraiv 2024_lisboa 0 set 16 16:57 test2
+-rw-r--r-- 1 josaraiv 2024_lisboa 0 set 16 16:57 test3
+-rw-r--r-- 1 josaraiv 2024_lisboa 0 set 16 16:57 test4
+-rw-r--r-- 1 josaraiv 2024_lisboa 0 set 16 16:57 test5
+lrwxrwxrwx 1 josaraiv 2024_lisboa 5 set 16 17:15 test6 -> test0
+c1r7s10% 
+
+
+

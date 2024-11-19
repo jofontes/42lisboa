@@ -1,0 +1,176 @@
+///exercicio 2
+c1r7s10% 
+c1r7s10% pwd
+/home/josaraiv/ex02
+c1r7s10% cd ..
+c1r7s10% pwd
+/home/josaraiv
+c1r7s10% cd lisboa 
+c1r7s10% pwd
+/home/josaraiv/lisboa
+c1r7s10% mkdir ex02
+c1r7s10% pwd
+/home/josaraiv/lisboa
+c1r7s10% cd ex02
+c1r7s10% pwd
+/home/josaraiv/lisboa/ex02
+c1r7s10% 
+c1r7s10% mkdir test0 test2
+c1r7s10% ls
+test0  test2
+c1r7s10% ls -l
+total 0
+drwxr-xr-x 2 josaraiv 2024_lisboa 6 set 17 10:45 test0
+drwxr-xr-x 2 josaraiv 2024_lisboa 6 set 17 10:45 test2
+c1r7s10% touch test1 test3 test4
+c1r7s10% ls -l
+total 0
+drwxr-xr-x 2 josaraiv 2024_lisboa 6 set 17 10:45 test0
+-rw-r--r-- 1 josaraiv 2024_lisboa 0 set 17 10:46 test1
+drwxr-xr-x 2 josaraiv 2024_lisboa 6 set 17 10:45 test2
+-rw-r--r-- 1 josaraiv 2024_lisboa 0 set 17 10:46 test3
+-rw-r--r-- 1 josaraiv 2024_lisboa 0 set 17 10:46 test4
+c1r7s10% ln test3 test5
+c1r7s10% ls -l
+total 0
+drwxr-xr-x 2 josaraiv 2024_lisboa 6 set 17 10:45 test0
+-rw-r--r-- 1 josaraiv 2024_lisboa 0 set 17 10:46 test1
+drwxr-xr-x 2 josaraiv 2024_lisboa 6 set 17 10:45 test2
+-rw-r--r-- 2 josaraiv 2024_lisboa 0 set 17 10:46 test3
+-rw-r--r-- 1 josaraiv 2024_lisboa 0 set 17 10:46 test4
+-rw-r--r-- 2 josaraiv 2024_lisboa 0 set 17 10:46 test5
+c1r7s10% chmod u-w,g+- test3
+c1r7s10% ls -l              
+total 0
+drwxr-xr-x 2 josaraiv 2024_lisboa 6 set 17 10:45 test0
+-rw-r--r-- 1 josaraiv 2024_lisboa 0 set 17 10:46 test1
+drwxr-xr-x 2 josaraiv 2024_lisboa 6 set 17 10:45 test2
+-r--r--r-- 2 josaraiv 2024_lisboa 0 set 17 10:46 test3
+-rw-r--r-- 1 josaraiv 2024_lisboa 0 set 17 10:46 test4
+-r--r--r-- 2 josaraiv 2024_lisboa 0 set 17 10:46 test5
+c1r7s10% ln -s test0 test6
+c1r7s10% ls -l            
+total 0
+drwxr-xr-x 2 josaraiv 2024_lisboa 6 set 17 10:45 test0
+-rw-r--r-- 1 josaraiv 2024_lisboa 0 set 17 10:46 test1
+drwxr-xr-x 2 josaraiv 2024_lisboa 6 set 17 10:45 test2
+-r--r--r-- 2 josaraiv 2024_lisboa 0 set 17 10:46 test3
+-rw-r--r-- 1 josaraiv 2024_lisboa 0 set 17 10:46 test4
+-r--r--r-- 2 josaraiv 2024_lisboa 0 set 17 10:46 test5
+lrwxrwxrwx 1 josaraiv 2024_lisboa 5 set 17 11:42 test6 -> test0
+
+c1r7s10% truncate -s 4 test1
+c1r7s10% ls -l              
+total 0
+drwxr-xr-x 2 josaraiv 2024_lisboa 6 set 17 10:45 test0
+-rw-r--r-- 1 josaraiv 2024_lisboa 4 set 17 12:06 test1
+drwxr-xr-x 2 josaraiv 2024_lisboa 6 set 17 10:45 test2
+-r--r--r-- 2 josaraiv 2024_lisboa 0 set 17 10:46 test3
+-rw-r--r-- 1 josaraiv 2024_lisboa 0 set 17 10:46 test4
+-r--r--r-- 2 josaraiv 2024_lisboa 0 set 17 10:46 test5
+lrwxrwxrwx 1 josaraiv 2024_lisboa 5 set 17 11:42 test6 -> test0
+c1r7s10% truncate -s 1 test3
+truncate: cannot open 'test3' for writing: Permission denied
+c1r7s10% truncate -s 1 test3
+truncate: cannot open 'test3' for writing: Permission denied
+c1r7s10% chmod +w
+chmod: missing operand after ‘+w’
+Try 'chmod --help' for more information.
+c1r7s10% chmod +w test3
+c1r7s10% truncate -s 1 test3
+c1r7s10% truncate -s 2 test4
+c1r7s10% truncate -s 1 test5
+c1r7s10% truncate -s 5 test6
+truncate: cannot open 'test6' for writing: Is a directory
+c1r7s10% ls -l              
+total 0
+drwxr-xr-x 2 josaraiv 2024_lisboa 6 set 17 10:45 test0
+-rw-r--r-- 1 josaraiv 2024_lisboa 4 set 17 12:06 test1
+drwxr-xr-x 2 josaraiv 2024_lisboa 6 set 17 10:45 test2
+-rw-r--r-- 2 josaraiv 2024_lisboa 1 set 17 12:11 test3
+-rw-r--r-- 1 josaraiv 2024_lisboa 2 set 17 12:10 test4
+-rw-r--r-- 2 josaraiv 2024_lisboa 1 set 17 12:11 test5
+lrwxrwxrwx 1 josaraiv 2024_lisboa 5 set 17 11:42 test6 -> test0
+
+
+c1r7s10% chmod u-w,g=- test3
+c1r7s10% ls -l              
+total 0
+drwxr-xr-x 2 josaraiv 2024_lisboa 6 set 17 10:45 test0
+-rw-r--r-- 1 josaraiv 2024_lisboa 4 set 17 12:06 test1
+drwxr-xr-x 2 josaraiv 2024_lisboa 6 set 17 10:45 test2
+-r-----r-- 2 josaraiv 2024_lisboa 1 set 17 12:11 test3
+-rw-r--r-- 1 josaraiv 2024_lisboa 2 set 17 12:10 test4
+-r-----r-- 2 josaraiv 2024_lisboa 1 set 17 12:11 test5
+lrwxrwxrwx 1 josaraiv 2024_lisboa 5 set 17 11:42 test6 -> test0
+c1r7s10% 
+
+c1r7s10% touch -t 06012047 test0
+c1r7s10% ls -l                  
+total 0
+drwxr-xr-x 2 josaraiv 2024_lisboa 6 jun  1 20:47 test0
+-rw-r--r-- 1 josaraiv 2024_lisboa 4 set 17 12:06 test1
+drwxr-xr-x 2 josaraiv 2024_lisboa 6 set 17 10:45 test2
+-r-----r-- 2 josaraiv 2024_lisboa 1 set 17 12:11 test3
+-rw-r--r-- 1 josaraiv 2024_lisboa 2 set 17 12:10 test4
+-r-----r-- 2 josaraiv 2024_lisboa 1 set 17 12:11 test5
+lrwxrwxrwx 1 josaraiv 2024_lisboa 5 set 17 11:42 test6 -> test0
+c1r7s10% touch -t 06012146 test1
+c1r7s10% touch -t 06012245 test2
+c1r7s10% touch -t 06012344 test3
+c1r7s10% touch -t 06012343 test4
+c1r7s10% touch -t 06012344 test5
+c1r7s10% touch -t 06012220 test6
+c1r7s10% ls -l                  
+total 0
+drwxr-xr-x 2 josaraiv 2024_lisboa 6 jun  1 22:20 test0
+-rw-r--r-- 1 josaraiv 2024_lisboa 4 jun  1 21:46 test1
+drwxr-xr-x 2 josaraiv 2024_lisboa 6 jun  1 22:45 test2
+-r-----r-- 2 josaraiv 2024_lisboa 1 jun  1 23:44 test3
+-rw-r--r-- 1 josaraiv 2024_lisboa 2 jun  1 23:43 test4
+-r-----r-- 2 josaraiv 2024_lisboa 1 jun  1 23:44 test5
+lrwxrwxrwx 1 josaraiv 2024_lisboa 5 set 17 11:42 test6 -> test0
+c1r7s10% 
+c1r7s10% touch -mht 06012220 test6
+c1r7s10% ls -l                    
+total 0
+drwxr-xr-x 2 josaraiv 2024_lisboa 6 jun  1 20:47 test0
+-rw-r--r-- 1 josaraiv 2024_lisboa 4 jun  1 21:46 test1
+drwxr-xr-x 2 josaraiv 2024_lisboa 6 jun  1 22:45 test2
+-r-----r-- 2 josaraiv 2024_lisboa 1 jun  1 23:44 test3
+-rw-r--r-- 1 josaraiv 2024_lisboa 2 jun  1 23:43 test4
+-r-----r-- 2 josaraiv 2024_lisboa 1 jun  1 23:44 test5
+lrwxrwxrwx 1 josaraiv 2024_lisboa 5 jun  1 22:20 test6 -> test0
+c1r7s10% touch 06012047 test0
+c1r7s10% ls -l               
+total 0
+-rw-r--r-- 1 josaraiv 2024_lisboa 0 set 17 13:12 06012047
+drwxr-xr-x 2 josaraiv 2024_lisboa 6 set 17 13:12 test0
+-rw-r--r-- 1 josaraiv 2024_lisboa 4 jun  1 21:46 test1
+drwxr-xr-x 2 josaraiv 2024_lisboa 6 jun  1 22:45 test2
+-r-----r-- 2 josaraiv 2024_lisboa 1 jun  1 23:44 test3
+-rw-r--r-- 1 josaraiv 2024_lisboa 2 jun  1 23:43 test4
+-r-----r-- 2 josaraiv 2024_lisboa 1 jun  1 23:44 test5
+lrwxrwxrwx 1 josaraiv 2024_lisboa 5 jun  1 22:20 test6 -> test0
+c1r7s10% 
+
+c1r7s10% ls -l
+total 0
+drwxr-xr-x 2 josaraiv 2024_lisboa 6 jun  1 20:47 test0
+-rw-r--r-- 1 josaraiv 2024_lisboa 4 jun  1 21:46 test1
+drwxr-xr-x 2 josaraiv 2024_lisboa 6 jun  1 22:45 test2
+-r-----r-- 2 josaraiv 2024_lisboa 1 jun  1 23:44 test3
+-rw-r--r-- 1 josaraiv 2024_lisboa 2 jun  1 23:43 test4
+-r-----r-- 2 josaraiv 2024_lisboa 1 jun  1 23:44 test5
+lrwxrwxrwx 1 josaraiv 2024_lisboa 5 jun  1 22:20 test6 -> test0
+c1r7s10% 
+
+
+inks:
+https://github.com/btleafar/42/tree/master/Piscines/C/Day00/files/ex02
+https://www.youtube.com/watch?v=K5tYeMWj4Vc
+https://www.ibm.com/docs/no/aix/7.1?topic=c-chmod-command
+https://www.cbtnuggets.com/blog/certifications/open-source/linux-hard-links-versus-soft-links-explained
+https://www.ibm.com/docs/en/zos/2.4.0?topic=descriptions-touch-change-file-access-modification-times
+
+

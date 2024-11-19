@@ -1,0 +1,13 @@
+keygen and git stuff from video that called me My little PogChamps
+
+generate a key:
+ssh-keygen
+cd ~/.ssh
+cat there
+
+
+git commands:
+git status
+git add file
+git commit -m "added file"
+git push

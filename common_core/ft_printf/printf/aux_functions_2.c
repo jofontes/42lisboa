@@ -6,7 +6,7 @@
 /*   By: josaraiv <josaraiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 16:08:15 by josaraiv          #+#    #+#             */
-/*   Updated: 2024/11/21 16:20:54 by josaraiv         ###   ########.fr       */
+/*   Updated: 2024/11/22 10:53:48 by josaraiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ int	print_digit_pointer(unsigned long n, unsigned long base)
 	char	*symbols;
 
 	symbols = "0123456789abcdef";
+	if (base < 2 || base > 16)
+		return (0);
 	if (n < base)
 	{
 		return (putchar(symbols[n]));

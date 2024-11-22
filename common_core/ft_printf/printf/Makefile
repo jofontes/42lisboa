@@ -6,11 +6,11 @@
 #    By: josaraiv <josaraiv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/21 14:18:56 by josaraiv          #+#    #+#              #
-#    Updated: 2024/11/21 16:26:39 by josaraiv         ###   ########.fr        #
+#    Updated: 2024/11/22 10:59:11 by josaraiv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = ft_printf.c aux_functions.c
+SRC = ft_printf.c aux_functions.c aux_functions_2.c
 	
 
 NAME = libftprintf.a

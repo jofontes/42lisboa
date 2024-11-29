@@ -8,7 +8,7 @@
 // {
 //     int fd;
 
-//     fd = open("text2.txt", O_RDWR);
+//     fd = open("text.txt", O_RDWR);
 //     printf("fd of fil %d\n", fd);
     
 //     write(1, "hello", 5);
@@ -18,6 +18,11 @@
 // }
 
 
+
+
+
+
+
 int main()
 {
     int fd;
@@ -25,13 +30,14 @@ int main()
     int chars_read;
     fd = open("text.txt", O_RDONLY);
     
-    while (chars_read = read(fd, buf, 25))
+    while (read(fd, buf, 25))
     {
+		chars_read = read(fd, buf, 25);
         buf[chars_read] = '\0';
-        printf("buf --> %s\n", buf);
+        printf("%s\n", buf);
     }
 
 
     write(1, "\n", 1);
     return 0;
-}
+}	

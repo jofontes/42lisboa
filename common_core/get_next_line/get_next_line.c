@@ -232,3 +232,77 @@ int main()
 	next_line = get_next_line(fd);
 	printf("%s\n", next_line);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+// int ft_strlen(char *str)
+// {
+// 	int i;
+// 	i = 0;
+
+// 	while(str && str[i] != '\0')
+// 		i++;
+// 	return (i);
+// }
+
+
+// char *ft_strjoin(char *next_line, char *buffer)
+// {
+// 	int i;
+// 	int j;
+// 	char *dest;
+
+// 	i = 0;
+// 	j = 0;
+// 	dest = malloc(sizeof(char) * (ft_strlen(next_line) + ft_strlen(buffer) + 1));
+// 	if(!dest)
+// 		return (NULL);
+// 	while(next_line && next_line[i] != '\0')
+// 	{
+// 		dest[i] = next_line[i];
+// 		i++;
+// 	}
+
+// 	while(buffer && buffer[j] != '\0' )
+// 	{
+// 		dest[i] = buffer[j];
+// 		i++;
+// 		j++;
+// 	}
+// 	dest[i] = '\0';
+// 	free(next_line);
+// 	return (dest);
+	
+// }
+
+
+
+// char *get_next_line(int fd)
+// {
+// 	static char buffer[BUFFER_SIZE + 1];
+// 	//int chars_read;
+// 	char *next_line;
+// 	int	bytes_read;
+	
+// 	next_line = NULL;
+	
+// 	bytes_read = 1;
+// 	while(bytes_read > 0)
+// 	{
+// 		bytes_read = read(fd, buffer, BUFFER_SIZE);
+// 		buffer[bytes_read] = '\0';
+// 		next_line = ft_strjoin(next_line, buffer);
+// 	}
+	
+	
+// 	return (next_line);
+// }

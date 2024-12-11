@@ -6,7 +6,7 @@
 /*   By: josaraiv <josaraiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 14:50:48 by josaraiv          #+#    #+#             */
-/*   Updated: 2024/12/09 16:12:10 by josaraiv         ###   ########.fr       */
+/*   Updated: 2024/12/10 12:16:51 by josaraiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,31 +52,3 @@ char	*ft_strjoin(char *next_line, char *buffer)
 	buffer[i] = '\0';
 	return (dest);
 }
-
-// char *ft_strjoin(char *next_line, char *buffer)
-// {
-// 	int i;
-// 	int j;
-// 	int s1_len;
-// 	int s2_len;
-// 	char *dest;
-
-// 	s1_len = ft_strlen(next_line);
-// 	s2_len = ft_strlen(buffer);
-// 	i = -1;
-// 	j = 0;
-// 	dest = malloc(s1_len + s2_len + 1);
-// 	if(!dest)
-// 		return (NULL);
-// 	while(++i < s1_len)
-// 		dest[i] = next_line[i];
-// 	while(j < s2_len)
-// 		dest[i++] = buffer[j++];
-// 	j = 0;
-// 	while (buffer[j])
-// 		buffer[j++] = buffer[--s2_len];
-// 	buffer[j] = '\0';
-// 	dest[i] = '\0';
-// 	free(next_line);
-// 	return (dest);
-// }

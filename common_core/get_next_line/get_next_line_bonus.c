@@ -6,7 +6,7 @@
 /*   By: josaraiv <josaraiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 11:34:44 by josaraiv          #+#    #+#             */
-/*   Updated: 2024/12/09 15:28:53 by josaraiv         ###   ########.fr       */
+/*   Updated: 2024/12/11 11:56:22 by josaraiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,3 +40,17 @@ char	*get_next_line(int fd)
 	}
 	return (next_line);
 }
+
+// int main()
+// {
+// 	int fd, fd2, fd3;
+// 	fd = open("text.txt", O_RDONLY);
+// 	fd2 = open("text2.txt", O_RDONLY);
+// 	fd3 = open("text3.txt", O_RDONLY);
+// 	printf("%s", get_next_line(fd));
+// 	printf("%s", get_next_line(fd));
+// 	printf("%s", get_next_line(fd2));
+// 	printf("%s", get_next_line(fd3));
+// 	printf("%s", get_next_line(fd2));
+// 	printf("%s", get_next_line(fd));
+// }

@@ -6,11 +6,11 @@
 /*   By: josaraiv <josaraiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 14:50:48 by josaraiv          #+#    #+#             */
-/*   Updated: 2024/12/11 11:48:44 by josaraiv         ###   ########.fr       */
+/*   Updated: 2024/12/18 14:30:10 by josaraiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 int	ft_strlen(char *str)
 {

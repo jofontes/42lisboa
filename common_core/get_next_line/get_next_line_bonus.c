@@ -6,11 +6,11 @@
 /*   By: josaraiv <josaraiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 11:34:44 by josaraiv          #+#    #+#             */
-/*   Updated: 2024/12/11 11:56:22 by josaraiv         ###   ########.fr       */
+/*   Updated: 2024/12/18 14:30:07 by josaraiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*get_next_line(int fd)
 {

@@ -12,6 +12,10 @@ ssh josaraiv@10.11.245.31 -p 4242
 
 
 
+
+
+
+
 para entrar na root: su
 criar utilizador: sudo adduser josaraiv
 criar grupo: sudo addgroup user42
@@ -20,5 +24,4 @@ para verificar: getent group user42
 
 
 
-
-4.2
+=

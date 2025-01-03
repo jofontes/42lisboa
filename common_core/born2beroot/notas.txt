@@ -41,64 +41,21 @@ nano /etc/pam.d/common-password
 	difok=7
 	enforce_for_root
 verificar pass no utilizador --> sudo chage -l name
+
 SRCIPT
-#!/bin/bash
+Architecture --> uname -a
+Physical Cores --> grep "physical id" /proc/cpuinfo | wc -l
+Virtual Cores --> grep processor /proc/cpuinfo | wc -l
+RAM --> free --mega | awk '$1 == "Mem:" {printf("(%.2f%%)\n", $3/$2*100)}'
+Disk memory --> df -m | grep "/dev/" | grep -v "/boot" | awk '{use += $3} {total += $2} END {printf("(%d%%)\n"), use/total*100}'
+CPU usage percentage --> vmstat 1 4 | tail -1 | awk '{print $15}'
+Last reboot --> who -b | awk '$1 == "system" {print $3 " " $4}'
+LVM active --> if [ $(lsblk | grep "lvm" | wc -l) -gt 0 ]; then echo yes; else echo no; fi
+TCP connections --> ss -ta | grep ESTAB | wc -l
+Number of users --> users | wc -w
+IP adress & MAC --> ip link | grep "link/ether" | awk '{print $2}'
+Number of commands executed with sudo --> journalctl _COMM=sudo | grep COMMAND | wc -l)
 
-# ARCH
-arch=$(uname -a)
-
-# CPU PHYSICAL
-cpuf=$(grep "physical id" /proc/cpuinfo | wc -l)
-
-# CPU VIRTUAL
-cpuv=$(grep "processor" /proc/cpuinfo | wc -l)
-
-# RAM
-ram_total=$(free --mega | awk '$1 == "Mem:" {print $2}')
-ram_use=$(free --mega | awk '$1 == "Mem:" {print $3}')
-ram_percent=$(free --mega | awk '$1 == "Mem:" {printf("%.2f"), $3/$2*100}')
-
-# DISK
-disk_total=$(df -m | grep "/dev/" | grep -v "/boot" | awk '{disk_t += $2} END {printf ("%.1fGb\n"), disk_t/1024}')
-disk_use=$(df -m | grep "/dev/" | grep -v "/boot" | awk '{disk_u += $3} END {print disk_u}')
-disk_percent=$(df -m | grep "/dev/" | grep -v "/boot" | awk '{disk_u += $3} {disk_t+= $2} END {printf("%d"), disk_u/disk_t*100}')
-
-# CPU LOAD
-cpul=$(vmstat 1 2 | tail -1 | awk '{printf $15}')
-cpu_op=$(expr 100 - $cpul)
-cpu_fin=$(printf "%.1f" $cpu_op)
-
-# LAST BOOT
-lb=$(who -b | awk '$1 == "system" {print $3 " " $4}')
-
-# LVM USE
-lvmu=$(if [ $(lsblk | grep "lvm" | wc -l) -gt 0 ]; then echo yes; else echo no; fi)
-
-# TCP CONNEXIONS
-tcpc=$(ss -ta | grep ESTAB | wc -l)
-
-# USER LOG
-ulog=$(users | wc -w)
-
-# NETWORK
-ip=$(hostname -I)
-mac=$(ip link | grep "link/ether" | awk '{print $2}')
-
-# SUDO
-cmnd=$(journalctl _COMM=sudo | grep COMMAND | wc -l)
-
-wall "	Architecture: $arch
-	CPU physical: $cpuf
-	vCPU: $cpuv
-	Memory Usage: $ram_use/${ram_total}MB ($ram_percent%)
-	Disk Usage: $disk_use/${disk_total} ($disk_percent%)
-	CPU load: $cpu_fin%
-	Last boot: $lb
-	LVM use: $lvmu
-	Connections TCP: $tcpc ESTABLISHED
-	User log: $ulog
-	Network: IP $ip ($mac)
-	Sudo: $cmnd cmd"
 
 CRONTAB
 edtar o ficheiro crontab --> sudo crontab -u root -e
@@ -131,6 +88,23 @@ Isolamento, Execução de Múltiplos Sistemas Operacionais, Eficiência de Recur
 
 
 -If the evaluated student chose Debian: the diference between aptitude and apt, and what APPArmor is. During the defense, a script must display information all every 10 minutes. Its operation will be checked in detail later.
+
+
+
+
+Evaluations commands
+
+Verificar que nao tem uma interface grafica em utilizacao --> ls /usr/bin/*session
+Verificar que UFW service esta em utilizacao --> sudo ufw status, sudo service ufw status
+Verificar que o SSH service esta em utilizacao --> sudo service ssh status
+Verificar que esta a ser usado Debian ou Centos operating system --> uname -v, uname --kernel-version
+Verificar que o user esta dentro dos grupos sudo e user42 --> getent group sudo, getent group user42
+Criar um novo user e mostrar que segue as regras da pass que foi feito --> udo adduser name_user
+Criar um novo grupo chamado evaluating --> sudo addgroup evaluating
+Adicionar o user ao novo grupo --> sudo adduser name_user evaluating
+Verificar --> getent group evaluating
+Verificar que o hostname da machine esta correto login42 --> hostname
+Mofificar o hostname que substiui o nosso pelo o do avaliador --> sudo nano /etc/hostname
 
 
 

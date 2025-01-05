@@ -67,7 +67,7 @@ linha a adicionar --> */10 * * * * sh /path
 Questions:
 -How a virtual machine works
 
- sistema informático e pode executar programas como se fosse um computador real. Permite a criação de múltiplos ambientes simulados ou recursos dedicados a partir de um único sistema
+Software que simula um sistema informático e pode executar programas como se fosse um computador real. Permite a criação de múltiplos ambientes simulados ou recursos dedicados a partir de um único sistema
 
 
 -Their choice of operating system
@@ -104,7 +104,13 @@ Criar um novo grupo chamado evaluating --> sudo addgroup evaluating
 Adicionar o user ao novo grupo --> sudo adduser name_user evaluating
 Verificar --> getent group evaluating
 Verificar que o hostname da machine esta correto login42 --> hostname
-Mofificar o hostname que substiui o nosso pelo o do avaliador --> sudo nano /etc/hostname
+Mofificar o hostname que substiui o nosso pelo o do avaliador --> sudo nano /etc/hostname, sudo nano /etc/hosts, sudo reboot, hostname
+Verificar as partições --> lsblk
+Verificar que o sudo está instalado --> which sudo, dpkg -s sudo
+Adicionar o novo user ao sudo group --> sudo adduser name_user sudo, getent group sudo
+Mostrar
+
+
 
 
 

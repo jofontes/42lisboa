@@ -1,29 +1,28 @@
 #include <unistd.h>
 
 
-int main(int ac, char **av)
+int main (int ac, char **av)
 {
-    if( ac == 2)
+    if (ac == 2)
     {
         int i;
         i = 0;
         int space;
         space = 0;
-
         while (av[1][i] <= 32)
             i++;
         while (av[1][i])
         {
-            if(av[1][i] <= 32)
+            if (av[1][i] <= 32)
             {
                 i++;
                 space = 1;
             }
             else
             {
-                if(space == 1)
+                if (space == 1)
                 {
-                    write (1, " ", 1);
+                    write (1, "   ", 3);
                     space = 0;
                 }
                 write (1, &av[1][i], 1);
@@ -31,7 +30,7 @@ int main(int ac, char **av)
             }
         }
     }
-    write(1,"\n", 1);
+    write(1, "\n", 1);
 }
 
 
@@ -41,7 +40,10 @@ int main(int ac, char **av)
 
 
 
-// #include <unistd.h>
+
+
+
+
 
 // void ft_putchar(char c)
 // {
@@ -53,7 +55,7 @@ int main(int ac, char **av)
 //     if (c <= 32)
 //         return 1;
 //     return 0;
-// }   
+// }
 
 // int main(int ac, char **av)
 // {
@@ -69,15 +71,15 @@ int main(int ac, char **av)
 //             // if there are multiple blank, it will be set
 //             // to 1 each time
 //             if (is_space(av[1][i]))
-//                 space = 1;
+//                  space = 1;
 //             // if current char is not a blank char
-//             // write a space if flag is on
+//             // write 3 spaces if flag is on
 //             // set the space flag back to 0
 //             // write current char
 //             if (!is_space(av[1][i]))
 //             {
 //                 if (space)
-//                     ft_putchar(' ');
+//                     write(1, "   ", 3);
 //                 space = 0;
 //                 ft_putchar(av[1][i]);
 //             }

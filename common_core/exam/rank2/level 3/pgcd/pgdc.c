@@ -6,6 +6,32 @@ int main(int ac, char **av)
 {
 	if (ac == 3)
 	{
+		int n1 = atoi(av[1]);
+		int n2 = atoi(av[2]);
+
+		int i = 1;
+		int dem = 1;
+		while (i <= n2)
+		{
+			if ((n1 % i == 0) && (n2 % i == 0))
+				dem = i;
+			i++;
+		}
+		printf("%d", dem);
+	}
+	printf("\n");
+}
+
+
+
+
+
+
+/*
+int main(int ac, char **av)
+{
+	if (ac == 3)
+	{
 		int min;
 		int n1 = atoi(av[1]);
 		int n2 = atoi(av[2]);
@@ -26,7 +52,7 @@ int main(int ac, char **av)
 	printf("\n");
 	return (0);
 }
-
+*/
 
 
 

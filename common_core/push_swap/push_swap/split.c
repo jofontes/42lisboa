@@ -29,7 +29,7 @@ static char *get_next_word(char *s, char c)
     static int  cursor = 0;
     char *next_word;
     int len;
-    int ;
+    int i;
 
     len = 0;
     i = 0;
@@ -46,7 +46,7 @@ static char *get_next_word(char *s, char c)
     return (next_word);
 }
 
-char ***split(char *s, char c)
+char **split(char *s, char c)
 {
     int     wc;
     char    **result_array;

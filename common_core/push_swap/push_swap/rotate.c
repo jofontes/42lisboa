@@ -1,4 +1,4 @@
-#include "../push_swap.h"
+#include "push_swap.h"
 
 static void rotate(t_stack_node **stack)
 {
@@ -28,7 +28,7 @@ void    rb(t_stack_node **b, bool print)
         write(1, "rb\n", 3);
 }
 
-void    ra(t_stack_node **a,t_stack_node **b, bool print)
+void    rr(t_stack_node **a,t_stack_node **b, bool print)
 {
     rotate(a);
     rotate(b);

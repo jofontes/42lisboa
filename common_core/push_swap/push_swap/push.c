@@ -1,4 +1,4 @@
-#include "../push_swap.h"
+#include "push_swap.h"
 
 static void push(t_stack_node **dest, t_stack_node **src)
 {
@@ -9,7 +9,7 @@ static void push(t_stack_node **dest, t_stack_node **src)
     *src= (*src)->next;
     if (*src)
         (*src)->prev = NULL;
-    push_node-prev = NULL;
+    push_node->prev = NULL;
     if (!dest)
     {
         *dest = push_node;

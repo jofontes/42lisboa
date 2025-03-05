@@ -1,6 +1,6 @@
-#include "../push_swap.h"
+#include "push_swap.h"
 
-static void rev_rotate(t_stack_node **stack);
+static void rev_rotate(t_stack_node **stack)
 {
     t_stack_node    *last;
 
@@ -10,8 +10,8 @@ static void rev_rotate(t_stack_node **stack);
     last->prev->next = NULL;
     last->next = *stack;
     last->prev = NULL;
-    *stack = las;
-    last->next-prev = last;
+    *stack = last;
+    last->next->prev = last;
 }
 
 void    rra(t_stack_node **a, bool print)
@@ -28,7 +28,7 @@ void    rrb(t_stack_node **b, bool print)
         write(1, "rrb\n", 4);
 }
 
-void    rra(t_stack_node **a, t_stack_node **b, bool print)
+void    rrr(t_stack_node **a, t_stack_node **b, bool print)
 {
     rev_rotate(a);
     rev_rotate(b);

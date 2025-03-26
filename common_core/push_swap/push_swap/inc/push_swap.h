@@ -6,7 +6,7 @@
 /*   By: josaraiv <josaraiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 10:20:05 by josaraiv          #+#    #+#             */
-/*   Updated: 2025/03/13 14:41:49 by josaraiv         ###   ########.fr       */
+/*   Updated: 2025/03/26 16:15:57 by josaraiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,6 @@ void					free_errors(t_stack_node **a);
 
 // Stack initiation
 void					init_stack_a(t_stack_node **a, char **argv);
-char				                          +:+ +:+         +:+     */
-/*   By: josaraiv <josaraiv@stu	**split(char *s, char c);
 
 // Nodes initiation
 void					init_nodes_a(t_stack_node *a, t_stack_node *b);
@@ -75,5 +73,4 @@ void					sort_three(t_stack_node **a);
 void					sort_stacks(t_stack_node **a, t_stack_node **b);
 void					min_on_top(t_stack_node **a);
 
-#endif                          +:+ +:+         +:+     */
-/*   By: josaraiv <josaraiv@stu
+#endif

@@ -6,7 +6,7 @@
 /*   By: josaraiv <josaraiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 10:19:49 by josaraiv          #+#    #+#             */
-/*   Updated: 2025/03/13 11:07:29 by josaraiv         ###   ########.fr       */
+/*   Updated: 2025/03/26 15:52:30 by josaraiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ int	main(int argc, char **argv)
 	b = NULL;
 	if (argc == 1 || (argc == 2 && !argv[1][0]))
 		return (1);
-	else if (argc == 2)
-		argv = split(argv[1], ' ');
 	init_stack_a(&a, argv + 1);
 	if (!stack_sorted(a))
 	{

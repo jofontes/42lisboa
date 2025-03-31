@@ -6,7 +6,7 @@
 /*   By: josaraiv <josaraiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 10:19:29 by josaraiv          #+#    #+#             */
-/*   Updated: 2025/03/26 15:27:32 by josaraiv         ###   ########.fr       */
+/*   Updated: 2025/03/30 14:33:35 by josaraiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,6 @@ void	free_stack(t_stack_node **stack)
 void	free_errors(t_stack_node **a)
 {
 	free_stack(a);
-	write(1, "Error\n", 6);
+	write(2, "Error\n", 6);
 	exit(1);
 }

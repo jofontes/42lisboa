@@ -6,7 +6,7 @@
 #    By: josaraiv <josaraiv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/10 11:17:51 by josaraiv          #+#    #+#              #
-#    Updated: 2025/03/26 16:18:54 by josaraiv         ###   ########.fr        #
+#    Updated: 2025/03/30 13:57:52 by josaraiv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ INC					= inc/
 SRC_DIR				= srcs/
 OBJ_DIR				= obj/
 
-CC					= gcc
+CC					= cc
 CFLAGS				= -Wall -Werror -Wextra -I
 RM					= rm -f
 

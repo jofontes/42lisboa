@@ -6,7 +6,7 @@
 /*   By: josaraiv <josaraiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 10:20:05 by josaraiv          #+#    #+#             */
-/*   Updated: 2025/03/26 16:15:57 by josaraiv         ###   ########.fr       */
+/*   Updated: 2025/03/28 11:19:09 by josaraiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,13 @@ typedef struct s_stack_node
 	struct s_stack_node	*prev;
 }						t_stack_node;
 
-// Handle errors
 int						error_syntax(char *str_n);
 int						error_duplicate(t_stack_node *a, int n);
 void					free_stack(t_stack_node **stack);
 void					free_errors(t_stack_node **a);
 
-// Stack initiation
 void					init_stack_a(t_stack_node **a, char **argv);
 
-// Nodes initiation
 void					init_nodes_a(t_stack_node *a, t_stack_node *b);
 void					init_nodes_b(t_stack_node *a, t_stack_node *b);
 void					current_index(t_stack_node *stack);
@@ -48,14 +45,12 @@ t_stack_node			*get_cheapest(t_stack_node *stack);
 void					prep_for_push(t_stack_node **s, t_stack_node *n,
 							char c);
 
-// Stack utils
 int						stack_len(t_stack_node *stack);
 t_stack_node			*find_last(t_stack_node *stack);
 bool					stack_sorted(t_stack_node *stack);
 t_stack_node			*find_min(t_stack_node *stack);
 t_stack_node			*find_max(t_stack_node *stack);
 
-// Commands
 void					sa(t_stack_node **a, bool print);
 void					sb(t_stack_node **b, bool print);
 void					ss(t_stack_node **a, t_stack_node **b, bool print);
@@ -68,7 +63,6 @@ void					rrr(t_stack_node **a, t_stack_node **b, bool print);
 void					pa(t_stack_node **a, t_stack_node **b, bool print);
 void					pb(t_stack_node **b, t_stack_node **a, bool print);
 
-// Algorithm
 void					sort_three(t_stack_node **a);
 void					sort_stacks(t_stack_node **a, t_stack_node **b);
 void					min_on_top(t_stack_node **a);

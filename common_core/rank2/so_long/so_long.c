@@ -1,33 +1,33 @@
 #include "mlx/mlx.h"
 
-// int	main(void)
-// {
-// 	void	*mlx;
-// 	void	*mlx_win;
-
-// 	mlx = mlx_init();
-// 	mlx_win = mlx_new_window(mlx, 1920, 1080, "Hello world!");
-// 	mlx_loop(mlx);
-// }
+#include <stdio.h>
+#include <stdlib.h>
 
 
 
 
+typedef struct	s_game {
+	void	*mlx;
+	void	*win;
 
-
-
-
-
-typedef struct	s_data {
+	//imagem my_mlx_pixel_put
 	void	*img;
 	char	*addr;
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
-}				t_data;
 
 
-void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
+	//para xpm img
+	void	*texture_img;
+	int 	texture_width;
+	int		texture_height;
+
+}				t_game;
+
+
+
+void	my_mlx_pixel_put(t_game *data, int x, int y, int color)
 {
 	char	*dst;
 
@@ -35,47 +35,102 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 	*(unsigned int*)dst = color;
 }
 
+
+
+
+// Função para desenhar a textura em toda a janela
+void put_texture(t_game *game)
+{
+	int x, y;
+	int tex_x, tex_y;
+	int color;
+
+	// Replicar a textura pela janela
+	for (y = 0; y < 480; y++) {
+		for (x = 0; x < 640; x++) {
+			// Calculando a posição na textura
+			tex_x = x % game->texture_width;
+			tex_y = y % game->texture_height;
+
+			// Pega a cor da textura
+			color = *(unsigned int *)(game->texture_img + (tex_y * game->texture_width + tex_x) * (game->bits_per_pixel / 8));
+
+			// Coloca a cor no destino
+			my_mlx_pixel_put(game, x, y, color);
+		}
+	}
+}
+
+
+int	render_next_frame(t_game *game)
+{
+	// Cria uma nova imagem a cada frame (opcional - pode ser otimizado)
+	game->img = mlx_new_image(game->mlx, 640, 480);
+	game->addr = mlx_get_data_addr(game->img, &game->bits_per_pixel, &game->line_length, &game->endian);
+
+	put_texture(game);
+
+	// Coloca a imagem na janela
+	mlx_put_image_to_window(game->mlx, game->win, game->img, 0, 0);
+
+	// Destrói a imagem depois de usar (opcional, só se estiver recriando toda vez)
+	mlx_destroy_image(game->mlx, game->img);
+
+	return (0);
+}
+
 int	main(void)
 {
-	void	*mlx;
-	void	*mlx_win;
-	t_data	img;
+	t_game	game;
 	
+	// game.player_x = 320; // Centro da tela
+	// game.player_y = 240;
+	// game.radius = 20;
 
-	mlx = mlx_init();
-	mlx_win = mlx_new_window(mlx, 1920, 1080, "Hello world!");
 
-	img.img = mlx_new_image(mlx, 1920, 1080);
-	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length, &img.endian);
-	
-	
-	
-	//my_mlx_pixel_put(&img, 5, 5, 0x00FF0000);
-	
-	//quadrado
-	int i = 0;
-	int j = 0;
-	while (i < 100)
+	game.mlx = mlx_init();
+
+	game.texture_img = mlx_xpm_file_to_image(game.mlx, "texture.xpm", &game.texture_width, &game.texture_height);
+
+	if (!game.texture_img)
 	{
-		j = 0;
-		while (j < 100)
-		{
-			my_mlx_pixel_put(&img, i, j, 0x00FF0000);
-			j++;
-		}
-		
-		i++;
-		
+		printf("Erro ao carregar imagem do cursor!\n");
+		exit(1);
 	}
-
-
-
 	
-	mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
 
+	game.win = mlx_new_window(game.mlx, 640, 480, "Hello world!");
+	
+	mlx_loop_hook(game.mlx, render_next_frame, &game);
 
-
-
-
-	mlx_loop(mlx);
+	mlx_loop(game.mlx);
 }
+
+
+
+
+
+
+
+// int main(void)
+// {
+//     t_game game;
+    
+//     game.mlx = mlx_init();
+
+//     // Testa o caminho do arquivo e a carga da imagem
+//     printf("Tentando carregar a imagem 'texture.xpm'...\n");
+//     game.texture_img = mlx_xpm_file_to_image(game.mlx, "texture.xpm", &game.texture_width, &game.texture_height);
+    
+//     if (!game.texture_img) {
+//         printf("Erro ao carregar a imagem! Verifique o caminho de texture.xpm.\n");
+//         exit(1);
+//     } else {
+//         printf("Imagem carregada com sucesso! Largura: %d, Altura: %d\n", game.texture_width, game.texture_height);
+//     }
+
+//     game.win = mlx_new_window(game.mlx, 640, 480, "Hello world!");
+
+//     mlx_loop_hook(game.mlx, render_next_frame, &game);
+//     mlx_loop(game.mlx);
+// }

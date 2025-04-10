@@ -6,7 +6,7 @@
 #    By: josaraiv <josaraiv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/21 14:18:56 by josaraiv          #+#    #+#              #
-#    Updated: 2025/04/03 13:39:17 by josaraiv         ###   ########.fr        #
+#    Updated: 2025/04/05 09:50:08 by josaraiv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -105,3 +105,74 @@ fclean: clean
 # Recompilar do zero
 re: fclean all
 	@echo "$(GREEN)🔄 Recompilação completa!$(RESET)"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# SRC = so_long.c
+
+# OBJ = $(SRC:%.c=%.o)
+
+# NAME = so_long
+
+# CC = cc
+# FLAGS = -Wall -Wextra -Werror
+
+# AR = ar rcs
+# RM = rm -rf
+
+
+
+# MLX_DIR = ./mlx
+# MLX = ${MLX_DIR}/libmlx.a
+
+# LIBS = ${MLX} -lXext -lX11 -lm -lbsd
+
+# # ANSI color codes
+# GREEN = \033[0;32m
+# YELLOW = \033[0;33m
+# BLUE = \033[0;34m
+# RED = \033[0;31m
+# NC = \033[0m  # No Color (reset)
+
+# all: $(NAME)
+
+# $(NAME): $(OBJ) ${MLX}
+# 	$(CC) $(FLAGS) $(OBJ) $(LIBS) -o $(NAME)
+# 	@echo "$(GREEN)Compiled so_long successfully$(NC)"
+
+# #Run libft's makefile in the libft directory
+
+# $(OBJS): %.o: %.c
+# 	@echo "$(BLUE)Compiling $<...$(NC)"
+# 	@$(CC) $(CFLAGS) -c $< -o $@
+
+
+
+# $(MLX):
+# 	@$(MAKE) -C $(MLX_DIR)
+
+# clean:
+# 	@echo "$(RED)Removing object files: $(NAME)$(NC)"
+# 	@$(RM) $(OBJ)
+# 	@$(MAKE) -C $(MLX_DIR) clean
+
+# fclean: clean
+# 	@echo "$(RED)Removing static library: $(NAME)$(NC)"
+# 	@$(RM) $(NAME)
+# 	@$(MAKE) -C $(MLX_DIR) clean
+
+# re: fclean all
+
+# .PHONY: all clean fclean re

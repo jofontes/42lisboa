@@ -1,0 +1,19 @@
+/* XPM */
+static char * texture[] = {
+"10 10 3 1",   // Tamanho da imagem (10x10) e 3 cores
+"  c #FFFFFF", // Cor branca (fundo)
+"r c #FF0000", // Cor vermelha
+"b c #0000FF", // Cor azul
+"rrrrrrrrrr",   // Linha de 10 pixels vermelhos
+"rrrrrrrrrr",   // Linha de 10 pixels vermelhos
+"rrrrrrrrrr",   // Linha de 10 pixels vermelhos
+"rrrrrrrrrr",   // Linha de 10 pixels vermelhos
+"bbbbbbbbbb",   // Linha de 10 pixels azuis
+"bbbbbbbbbb",   // Linha de 10 pixels azuis
+"bbbbbbbbbb",   // Linha de 10 pixels azuis
+"bbbbbbbbbb",   // Linha de 10 pixels azuis
+"rrrrrrrrrr",   // Linha de 10 pixels vermelhos
+"rrrrrrrrrr",   // Linha de 10 pixels vermelhos
+"rrrrrrrrrr",   // Linha de 10 pixels vermelhos
+"rrrrrrrrrr",   // Linha de 10 pixels vermelhos
+};

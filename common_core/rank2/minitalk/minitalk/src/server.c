@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   server.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: josaraiv <josaraiv@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/23 18:42:00 by josaraiv          #+#    #+#             */
+/*   Updated: 2025/05/23 18:42:20 by josaraiv         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../inc/minitalk.h"
 
 int	putchar(int c)
@@ -7,63 +19,51 @@ int	putchar(int c)
 
 int	print_digit(long n, int base)
 {
-	int		count;
 	char	*symbols;
+	int		count;
 
 	symbols = "0123456789abcdef";
 	if (n < 0)
-	{
-		write(1, "-", 1);
-		return (print_digit(-n, base) + 1);
-	}
-	else if (n < base)
-	{
+		return (write(1, "-", 1) + print_digit(-n, base));
+	if (n < base)
 		return (putchar(symbols[n]));
-	}
-	else
-	{
-		count = print_digit(n / base, base);
-		return (count + print_digit(n % base, base));
-	}
+	count = print_digit(n / base, base);
+	return (count + print_digit(n % base, base));
 }
 
-
-void	sig_handler(int sig)
+void	sig_handler(int sig, siginfo_t *info, void *context)
 {
-	static int	bit;
-	static int	i; 
+	static int	bit = 0;
+	static int	char_accum = 0;
 
+	(void)context;
 	if (sig == SIGUSR1)
-		i |= (0x01 << bit);
+		char_accum |= (0x01 << bit);
 	bit++;
-	if (bit == 8) 
+	if (bit == 8)
 	{
-		putchar(i); 
-		bit = 0; 
-		i = 0; 
+		write(1, &char_accum, 1);
+		bit = 0;
+		char_accum = 0;
 	}
+	kill(info->si_pid, SIGUSR1);
 }
 
-int	main(int argc, char **argv) 
+int	main(void)
 {
-	pid_t	pid;
+	struct sigaction	sa;
+	pid_t				pid;
 
-	(void)argv; 
-	if (argc != 1) 
-	{
-		write(1, "Error: wrong format\n", 20);
-		write(1, "Try: ./server\n", 14);
-	}
-	pid = getpid(); 
-	write(1, "PID:", 4); // %d\n", pid);
-	print_digit(pid, 10); 
+	pid = getpid();
+	write(1, "PID: ", 5);
+	print_digit(pid, 10);
 	write(1, "\nWaiting for a message...\n", 26);
-	while (argc == 1)
-	{
-		signal(SIGUSR1, sig_handler); 
-		signal(SIGUSR2, sig_handler); 
+	sa.sa_sigaction = sig_handler;
+	sa.sa_flags = SA_SIGINFO;
+	sigemptyset(&sa.sa_mask);
+	sigaction(SIGUSR1, &sa, NULL);
+	sigaction(SIGUSR2, &sa, NULL);
+	while (1)
 		pause();
-	}
-	return (0); 
+	return (0);
 }
-

@@ -6,7 +6,7 @@
 #    By: josaraiv <josaraiv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/21 14:18:56 by josaraiv          #+#    #+#              #
-#    Updated: 2025/05/29 10:29:01 by josaraiv         ###   ########.fr        #
+#    Updated: 2025/04/13 16:29:43 by josaraiv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -277,7 +277,7 @@ OBJ_DIR				=	obj/
 # Source Files
 SRC					=	so_long.c \
 						gnl.c \
-						map.c \
+						# extra.c \
 						# events.c \
 						# utils1.c \
 						# utils2.c \

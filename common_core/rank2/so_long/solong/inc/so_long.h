@@ -6,68 +6,46 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+# include <fcntl.h>
+# include <stddef.h>
+# include <unistd.h>
+# include <stdbool.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 5
 # endif
 
+typedef struct	s_image
+{
+	void	*img;
+	int		width;
+	int		height;
+}	t_image;
 
 typedef struct	s_game {
 	void	*mlx;
 	void	*win;
-
-	//imagem my_mlx_pixel_put
-	void	*img;
-	char	*addr;
-	int		bits_per_pixel;
-	int		line_length;
-	int		endian;
-
-
-	//para xpm img
-	void	*texture_img;
-	int 	texture_width;
-	int		texture_height;
-	void	*cursor_img;
-	// int 	cursor_width;
-	// int		cursor_height;
-	int		cursor_x;
-	int		cursor_y;
-
-
-	//mapa
-	char **map;
-	int map_width;
-	int map_height;
-
-
-
-	//Carregar texturas para cada tipo
-	void *wall_img;
-	void *floor_img;
-	void *player_img;
-	void *exit_img;
-	void *collectible_img;
-
-
-
-}				t_game;
-
-
-
-
-int	handle_input(int keycode, t_game *game);
-void	my_mlx_pixel_put(t_game *data, int x, int y, int color);
-int	render_next_frame(t_game *game);
-int	main(void);
+	t_image	player_img;
+	t_image	wall_img;
+	t_image	colec_img;
+	t_image	exit_img;
+	int		player_x;
+	int		player_y;
+	int 	height;
+	int		width;
+	char 	**map;
+}	t_game;
 
 
 char	*get_next_line(int fd);
-int	count_lines(char *filename);
-char	**read_map(char *filename, int *map_height);
-char	*get_next_line(int fd);
-int	ft_strlen(char *str);
-char	*ft_strjoin(char *next_line, char *buffer);
 
+//map
+int count_map_lines(const char *path);
+int count_map_width(const char *path);
+int is_retangulo(const char *path);
+int read_map(const char *path, t_game *game);
+int surrounded_by_walls(t_game *game);
+int count_E_P_C(t_game *game, char letter);
+int other_letters(t_game *game);
 
 #endif

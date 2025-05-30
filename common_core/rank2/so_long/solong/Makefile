@@ -6,7 +6,7 @@
 #    By: josaraiv <josaraiv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/21 14:18:56 by josaraiv          #+#    #+#              #
-#    Updated: 2025/05/29 10:29:01 by josaraiv         ###   ########.fr        #
+#    Updated: 2025/05/30 19:03:27 by josaraiv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -263,7 +263,7 @@ NAME				=	so_long
 
 # Compiler and CFlags
 CC					=	cc
-CFLAGS				=	-Wall -Werror -Wextra
+CFLAGS				=	-Wall -Werror -Wextra -g
 LIBS      			=	-lXext -lX11 -lm
 RM					=	rm -f
 
@@ -278,6 +278,10 @@ OBJ_DIR				=	obj/
 SRC					=	so_long.c \
 						gnl.c \
 						map.c \
+						map2.c \
+						map3.c \
+						map4.c \
+						map5.c \
 						# events.c \
 						# utils1.c \
 						# utils2.c \
@@ -319,6 +323,9 @@ fclean: 				clean
 						@echo "$(RED)Executable and MinilibX removed."
 
 re: 					fclean all
+
+val: re
+	@valgrind --show-leak-kinds=all --leak-check=full --track-fds=all ./$(NAME) maps/map.ber
 
 # Phony targets represent actions not files
 .PHONY: 				all clean fclean re
